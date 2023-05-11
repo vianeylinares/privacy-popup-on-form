@@ -41,6 +41,9 @@ if( ! class_exists ( 'PF_on_PU' ) ){
 
             add_action( 'admin_menu', array( $this, 'PF_on_PU_add_menu' ) );
 
+            require_once( PF_on_PU_PATH . 'class.pf-on-pu-settings.php' );
+            $PF_on_PU_Settings = new PF_on_PU_Settings();
+
         }
 
         public function define_constants(){
@@ -80,6 +83,8 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             if( ! current_user_can( 'manage_options' ) ){
                 return;
             }
+
+            require( PF_on_PU_PATH . 'views/settings-page.php' );
 
         }
 
