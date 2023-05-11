@@ -44,6 +44,9 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             require_once( PF_on_PU_PATH . 'class.pf-on-pu-settings.php' );
             $PF_on_PU_Settings = new PF_on_PU_Settings();
 
+            require_once( PF_on_PU_PATH . 'shortcodes/class.pf-on-pu-shortcode.php' );
+            $PF_on_PU_Shortcode = new PF_on_PU_Shortcode();
+
         }
 
         public function define_constants(){
