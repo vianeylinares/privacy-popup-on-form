@@ -25,3 +25,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Privacy form on popup. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
+
+// Prevents direct access to .php file through URL
+if( ! defined('ABSPATH') ){
+    exit;
+}
