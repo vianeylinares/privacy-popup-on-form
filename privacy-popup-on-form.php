@@ -47,6 +47,8 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             require_once( PF_on_PU_PATH . 'shortcodes/class.pf-on-pu-shortcode.php' );
             $PF_on_PU_Shortcode = new PF_on_PU_Shortcode();
 
+            add_action( 'wp_enqueue_scripts', array( $this, 'PF_on_PU_register_scripts' ), 999 );
+
         }
 
         public function define_constants(){
@@ -91,8 +93,17 @@ if( ! class_exists ( 'PF_on_PU' ) ){
 
         }
 
-    }
+        public function PF_on_PU_register_scripts(){
+            
+            wp_register_style( 'magnific-popup-css', PF_on_PU_URL . 'vendor/magnific-popup/magnific-popup.css', array(), PF_on_PU_VERSION, 'all' );
+            wp_register_style( 'pf-on-pu-frontend-css', PF_on_PU_URL . 'assets/css/style.css', array(), PF_on_PU_VERSION, 'all' );
 
+            wp_register_script( 'magnific-popup-js', PF_on_PU_URL . 'vendor/magnific-popup/jquery.magnific-popup.js', array('jquery'), PF_on_PU_VERSION, true );
+            wp_register_script( 'pf-on-pu-frontend-js', PF_on_PU_URL . 'assets/js/js.js', array('jquery'), PF_on_PU_VERSION, true );
+
+        }
+
+    }
 
 }
 
