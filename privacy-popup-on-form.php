@@ -30,3 +30,12 @@ along with Privacy form on popup. If not, see https://www.gnu.org/licenses/gpl-2
 if( ! defined('ABSPATH') ){
     exit;
 }
+
+if( ! class_exists ( 'PF_on_PU' ) ){
+
+    class PF_on_PU{
+
+    }
+
+
+}
