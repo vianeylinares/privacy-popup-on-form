@@ -39,6 +39,8 @@ if( ! class_exists ( 'PF_on_PU' ) ){
 
             $this->define_constants();
 
+            add_action( 'admin_menu', array( $this, 'PF_on_PU_add_menu' ) );
+
         }
 
         public function define_constants(){
@@ -56,6 +58,28 @@ if( ! class_exists ( 'PF_on_PU' ) ){
         }
 
         public static function uninstall(){
+
+        }
+
+        public function PF_on_PU_add_menu(){
+
+            add_menu_page(
+                esc_html__( 'Privacy form on popup Options', 'pf-on-pu' ),
+                esc_html__( 'Privacy form on popup', 'pf-on-pu' ),
+                'manage_options',
+                'pf-on-pu_admin',
+                array( $this, 'PF_on_PU_settings_page' ),
+                'dashicons-images-alt2',
+                //10
+            );
+
+        }
+
+        public function PF_on_PU_settings_page(){
+
+            if( ! current_user_can( 'manage_options' ) ){
+                return;
+            }
 
         }
 
