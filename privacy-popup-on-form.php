@@ -47,7 +47,29 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             define( 'PF_on_PU_VERSION', '1.0.0' );
         }
 
+        public static function activate(){
+            update_option( 'rewrite_rules', '');
+        }
+
+        public static function deactivate(){
+            flush_rewrite_rules();
+        }
+
+        public static function uninstall(){
+
+        }
+
     }
 
+
+}
+
+if( class_exists( 'PF_on_PU' ) ){
+
+    register_activation_hook( __FILE__, array( 'PF_on_PU', 'activate' ) );
+    register_deactivation_hook( __FILE__, array( 'PF_on_PU', 'deactivate' ) );
+    register_uninstall_hook( __FILE__, array( 'PF_on_PU', 'uninstall' ) );
+
+    $pf_on_pb = new PF_on_PU();
 
 }
