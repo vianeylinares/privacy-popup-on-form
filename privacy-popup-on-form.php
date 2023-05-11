@@ -35,6 +35,18 @@ if( ! class_exists ( 'PF_on_PU' ) ){
 
     class PF_on_PU{
 
+        function __construct(){
+
+            $this->define_constants();
+
+        }
+
+        public function define_constants(){
+            define( 'PF_on_PU_PATH', plugin_dir_path(__FILE__) );
+            define( 'PF_on_PU_URL', plugin_dir_url(__FILE__) );
+            define( 'PF_on_PU_VERSION', '1.0.0' );
+        }
+
     }
 
 
