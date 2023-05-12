@@ -12,7 +12,8 @@
 
             $args = array(
                 'post_type' => 'any',
-                'p' => 3, // Privacy policy page ID number
+                'p' => get_option( 'wp_page_for_privacy_policy' ), // Privacy policy page ID number
+                'post_status'=>'publish'
             );
 
             $query = new WP_Query($args);

@@ -44,6 +44,14 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 )
             );
 
+            add_settings_field(
+                'pf_on_pu_privacy_policy',
+                esc_html__( 'Privacy policy', 'pf-on-pu' ),
+                array( $this, 'pf_on_pu_privacy_policy_callback' ),
+                'pf_on_pu_page1',
+                'pf_on_pu_main_section'
+            );
+
         }
 
         public function pf_on_pu_shortcode_callback(){
@@ -71,6 +79,26 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
 
             <?php
+        }
+
+        public function pf_on_pu_privacy_policy_callback(){
+
+            $privacy_policy_page_ID = get_option( 'wp_page_for_privacy_policy' );
+            $privacy_policy_page = get_page( $privacy_policy_page_ID );
+            if ($privacy_policy_page->post_status == 'publish') {
+                ?>
+                    <p>
+                        <?php esc_html_e( 'Your privacy policy page is ready.', 'pf-on-pu' ); ?>
+                    </p>
+                <?php          
+            } else {
+                ?>
+                    <p>
+                        <?php esc_html_e( 'Your privacy policy page is not set up. Please assign or publish your privacy policy page.', 'pf-on-pu' ); ?>
+                    </p>
+                <?php
+            }
+
         }
 
         public function pf_on_pu_validate( $input ){
