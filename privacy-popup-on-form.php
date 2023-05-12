@@ -106,7 +106,7 @@ if( ! class_exists ( 'PF_on_PU' ) ){
 
         public function PF_on_PU_register_admin_scripts(){
 
-            if( $_GET['page'] == 'pf-on-pu_admin' ){
+            if( isset( $_GET['page'] ) && $_GET['page'] == 'pf-on-pu_admin' ){
                 wp_enqueue_style( 'pf-on-pu-frontend-admin-css', PF_on_PU_URL . 'assets/css/admin.css' );
             }
 
