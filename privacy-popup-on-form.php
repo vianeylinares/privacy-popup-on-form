@@ -67,7 +67,7 @@ if( ! class_exists ( 'PF_on_PU' ) ){
         }
 
         public static function uninstall(){
-
+            delete_option( 'pf_on_pu_options' );
         }
 
         public function PF_on_PU_add_menu(){
