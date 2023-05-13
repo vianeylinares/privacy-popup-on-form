@@ -3,7 +3,7 @@
 * Plugin Name: Privacy form on popup
 * Plugin URI: https://github.com/vianeylinares/privacy-popup-on-form
 * Description: Privacy form on popup description
-* Version: 1.0
+* Version: 1.0.0
 * Requires at least: 5.6
 * Author: Vianey Linares
 * Author URL: https://vianeylinares.com
