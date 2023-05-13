@@ -90,6 +90,10 @@ if( ! class_exists ( 'PF_on_PU' ) ){
                 return;
             }
 
+            if( isset( $_GET['settings-updated'] ) ){
+                add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'Settings Saved', 'pf-on-pu' ), 'sucess' );
+            }
+            settings_errors( 'pf_on_pu_options' );
             require( PF_on_PU_PATH . 'views/settings-page.php' );
 
         }
