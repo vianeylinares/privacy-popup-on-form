@@ -1,4 +1,5 @@
-#pf_on_pu_form{
+#pf_on_pu_form,
+#pf_on_pu_custom_styles{
     width: 100%;
-    min-height: 500px;
+    min-height: 300px;
 }

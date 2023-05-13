@@ -52,6 +52,17 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 'pf_on_pu_main_section'
             );
 
+            add_settings_field(
+                'pf_on_pu_custom_styles',
+                esc_html__( 'Custom styles', 'pf-on-pu' ),
+                array( $this, 'pf_on_pu_custom_styles_callback' ),
+                'pf_on_pu_page1',
+                'pf_on_pu_main_section',
+                array(
+                    'label_for' => 'pf_on_pu_custom_styles'
+                )
+            );
+
         }
 
         public function pf_on_pu_shortcode_callback(){
@@ -99,6 +110,23 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 <?php
             }
 
+        }
+
+        public function pf_on_pu_custom_styles_callback( $args ){
+            ?>
+
+                <textarea
+                    name="pf_on_pu_options[pf_on_pu_custom_styles]"
+                    id="pf_on_pu_custom_styles"
+                    >
+                    <?php echo isset( self::$options['pf_on_pu_custom_styles'] ) ? self::$options['pf_on_pu_custom_styles'] : '' ; ?>
+                </textarea>
+                <label for="pf_on_pu_custom_styles" style="display: block;">
+                    <?php esc_html_e( 'Include custom styles if you need.', 'pf-on-pu' ); ?>
+                </label>
+
+
+            <?php
         }
 
         public function pf_on_pu_validate( $input ){
