@@ -74,7 +74,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                     <?php echo isset( self::$options['pf_on_pu_form'] ) ? esc_attr( self::$options['pf_on_pu_form'] ) : '' ; ?>
                 </textarea>
                 <label for="pf_on_pu_form" style="display: block;">
-                    <?php esc_html_e( 'Include id "policy-box" in privacy policy checkbox definition', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Include id "policy-check" in privacy policy checkbox definition', 'pf-on-pu' ); ?>
                 </label>
 
 
