@@ -69,7 +69,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
             ?>
 
                 <p>
-                    <?php esc_html_e( 'Use the shortcode [privacy_popup_on_form] to display the form and the popup in any page/post/widget', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Use the shortcode [privacy_popup_on_form] to display the form and the popup in any page/post/widget.', 'pf-on-pu' ); ?>
                 </p>
 
             <?php
@@ -85,7 +85,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                     <?php echo isset( self::$options['pf_on_pu_form'] ) ? esc_attr( self::$options['pf_on_pu_form'] ) : '' ; ?>
                 </textarea>
                 <label for="pf_on_pu_form" style="display: block;">
-                    <?php esc_html_e( 'Include id "policy-check" in privacy policy checkbox definition', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Include id "policy-check" in privacy policy checkbox definition.', 'pf-on-pu' ); ?>
                 </label>
 
 
@@ -122,7 +122,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                     <?php echo isset( self::$options['pf_on_pu_custom_styles'] ) ? self::$options['pf_on_pu_custom_styles'] : '' ; ?>
                 </textarea>
                 <label for="pf_on_pu_custom_styles" style="display: block;">
-                    <?php esc_html_e( 'Include custom styles if you need.', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Include custom styles if necessary.', 'pf-on-pu' ); ?>
                 </label>
 
 
@@ -137,8 +137,8 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 switch( $key ){
                     case 'pf_on_pu_form':
                         if( empty( $value ) ){
-                            add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'The HTML form field cannot be empty', 'pf-on-pu' ) );
-                            $value = esc_html__( "Please, type some HTML code", 'pf-on-pu' );
+                            add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'The HTML form field cannot be empty.', 'pf-on-pu' ) );
+                            $value = esc_html__( "Please, type some HTML code.", 'pf-on-pu' );
                         }
                         $allowed_tags = array(
                             'strong'    => array(),
