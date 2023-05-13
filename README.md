@@ -9,7 +9,7 @@ This plugin was developed to be used with custom HTML newsletter forms provided 
 The plugin was developed with:
 <ul>
 <li>WordPress</li>
-<li>PHP 7.x</li>
+<li>PHP</li>
 <li>HTML</li>
 <li>JavaScript/jQuery</li>
 <li>CSS</li>
