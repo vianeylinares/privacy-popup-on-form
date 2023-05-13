@@ -9,7 +9,7 @@
 * Author URL: https://vianeylinares.com
 * Licence: GPL v2 or later
 * Licence URL: https://www.gnu.org/licences/gp;-2.0.html
-* Text Domain: privacy-popup-on-form
+* Text Domain: pf-on-pu
 * Domain Path: /languages
 */
 
