@@ -1,12 +1,12 @@
 <?php
 /**
 * Plugin Name: Privacy form on popup
-* Plugin URI: 
+* Plugin URI: https://github.com/vianeylinares/privacy-popup-on-form
 * Description: Privacy form on popup description
 * Version: 1.0
 * Requires at least: 5.6
 * Author: Vianey Linares
-* Author URL: 
+* Author URL: https://vianeylinares.com
 * Licence: GPL v2 or later
 * Licence URL: https://www.gnu.org/licences/gp;-2.0.html
 * Text Domain: privacy-popup-on-form
