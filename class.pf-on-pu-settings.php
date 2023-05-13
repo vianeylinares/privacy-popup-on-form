@@ -136,39 +136,41 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
             foreach( $input as $key => $value ){
                 switch( $key ){
                     case 'pf_on_pu_form':
-                        if( empty( $value ) ){
+                        if( empty( $value ) || $value == "Please, type some HTML code." ){
                             add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'The HTML form field cannot be empty.', 'pf-on-pu' ) );
                             $value = esc_html__( "Please, type some HTML code.", 'pf-on-pu' );
+                            $new_input[$key] = trim( $value );
+                        } else {
+                            $allowed_tags = array(
+                                'strong'    => array(),
+                                'em'        => array(),
+                                'b'         => array(),
+                                'i'         => array(),
+                                'br'        => array(),
+                                'form'      => array(),
+                                'input'     => array(
+                                    'id'    => array(),
+                                    'class' => array(),
+                                    'type'  => array(),
+                                    'name'  => array(),
+                                    'value' => array(),
+                                    'placeholder'   => array(),
+                                    'required'      => array()
+                                ),
+                                'a'         => array(
+                                    'href'  => array(),
+                                    'class' => array()
+                                ),
+                                'p'         => array(
+                                    'class' => array()
+                                )
+                            );
+                            $new_input[$key] =  trim( wp_kses( $value, $allowed_tags ) );
                         }
-                        $allowed_tags = array(
-                            'strong'    => array(),
-                            'em'        => array(),
-                            'b'         => array(),
-                            'i'         => array(),
-                            'br'        => array(),
-                            'form'      => array(),
-                            'input'     => array(
-                                'id'    => array(),
-                                'class' => array(),
-                                'type'  => array(),
-                                'name'  => array(),
-                                'value' => array(),
-                                'placeholder'   => array(),
-                                'required'      => array()
-                            ),
-                            'a'         => array(
-                                'href'  => array(),
-                                'class' => array()
-                            ),
-                            'p'         => array(
-                                'class' => array()
-                            )
-                        );
-                        $new_input[$key] =  wp_kses( $value, $allowed_tags );
                         break;
                         case 'pf_on_pu_custom_styles':
                             $allowed_tags = array();
-                            $new_input[$key] =  wp_kses( $value, $allowed_tags );
+                            $new_input[$key] =  trim( wp_kses( $value, $allowed_tags ) );
                             break;
                     default:
                         $new_input[$key] = sanitize_text_field( $value );
