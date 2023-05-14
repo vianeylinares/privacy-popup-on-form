@@ -16,4 +16,4 @@ The plugin was developed with:
 <li>Magnific Popup</li>
 </ul>
 
-This plugin is a revamp of the <a href="https://github.com/vianeylinares/form-and-popup" target="_blank">Form and Popup</a> plugin.
+This plugin is a revamp of the [Form and Popup](https://github.com/vianeylinares/form-and-popup){:target="_blank"} plugin.
