@@ -104,7 +104,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 <?php          
             } else {
                 ?>
-                    <p>
+                    <p style="color: red;">
                         <?php esc_html_e( 'Your privacy policy page is not set up. Please assign or publish your privacy policy page.', 'pf-on-pu' ); ?>
                     </p>
                 <?php
