@@ -1,4 +1,4 @@
-# privacy-popup-on-form
+# Privacy popup on form
 
 This project goal was creating a custom WordPress plugin that would display at the frontend a newsletter form, including a privacy policy acceptance checkbox. If the user checks the checkbox, the popup activates and shows the privacy policy text.
 
