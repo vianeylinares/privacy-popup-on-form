@@ -9,7 +9,7 @@
 * Author URL: https://vianeylinares.com
 * Licence: GPL v2 or later
 * Licence URL: https://www.gnu.org/licences/gp;-2.0.html
-* Text Domain: pf-on-pu
+* Text Domain: privacy-popup-on-form
 * Domain Path: /languages
 */
 
@@ -38,6 +38,8 @@ if( ! class_exists ( 'PF_on_PU' ) ){
         function __construct(){
 
             $this->define_constants();
+
+            $this->load_textdomain();
 
             add_action( 'admin_menu', array( $this, 'PF_on_PU_add_menu' ) );
 
@@ -70,11 +72,19 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             delete_option( 'pf_on_pu_options' );
         }
 
+        public function load_textdomain(){
+            load_plugin_textdomain(
+                'privacy-popup-on-form',
+                false,
+                dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+            );
+        }
+
         public function PF_on_PU_add_menu(){
 
             add_menu_page(
-                esc_html__( 'Privacy form on popup Options', 'pf-on-pu' ),
-                esc_html__( 'Privacy form on popup', 'pf-on-pu' ),
+                esc_html__( 'Privacy form on popup Options', 'privacy-popup-on-form' ),
+                esc_html__( 'Privacy form on popup', 'privacy-popup-on-form' ),
                 'manage_options',
                 'pf-on-pu_admin',
                 array( $this, 'PF_on_PU_settings_page' ),
@@ -91,7 +101,7 @@ if( ! class_exists ( 'PF_on_PU' ) ){
             }
 
             if( isset( $_GET['settings-updated'] ) ){
-                add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'Settings Saved', 'pf-on-pu' ), 'sucess' );
+                add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'Settings Saved', 'privacy-popup-on-form' ), 'sucess' );
             }
             settings_errors( 'pf_on_pu_options' );
             require( PF_on_PU_PATH . 'views/settings-page.php' );

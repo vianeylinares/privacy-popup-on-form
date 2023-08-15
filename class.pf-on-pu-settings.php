@@ -19,7 +19,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
             add_settings_section(
                 'pf_on_pu_main_section',
-                esc_html__( 'How does it work?', 'pf-on-pu' ),
+                esc_html__( 'How does it work?', 'privacy-popup-on-form' ),
                 null,
                 'pf_on_pu_page1'
             );
@@ -27,7 +27,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
             add_settings_field(
                 'pf_on_pu_shortcode',
-                esc_html__( 'Shortcode', 'pf-on-pu' ),
+                esc_html__( 'Shortcode', 'privacy-popup-on-form' ),
                 array( $this, 'pf_on_pu_shortcode_callback' ),
                 'pf_on_pu_page1',
                 'pf_on_pu_main_section'
@@ -35,7 +35,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
             add_settings_field(
                 'pf_on_pu_form',
-                esc_html__( 'HTML form', 'pf-on-pu' ),
+                esc_html__( 'HTML form', 'privacy-popup-on-form' ),
                 array( $this, 'pf_on_pu_form_callback' ),
                 'pf_on_pu_page1',
                 'pf_on_pu_main_section',
@@ -46,7 +46,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
             add_settings_field(
                 'pf_on_pu_privacy_policy',
-                esc_html__( 'Privacy policy', 'pf-on-pu' ),
+                esc_html__( 'Privacy policy', 'privacy-popup-on-form' ),
                 array( $this, 'pf_on_pu_privacy_policy_callback' ),
                 'pf_on_pu_page1',
                 'pf_on_pu_main_section'
@@ -54,7 +54,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
 
             add_settings_field(
                 'pf_on_pu_custom_styles',
-                esc_html__( 'Custom styles', 'pf-on-pu' ),
+                esc_html__( 'Custom styles', 'privacy-popup-on-form' ),
                 array( $this, 'pf_on_pu_custom_styles_callback' ),
                 'pf_on_pu_page1',
                 'pf_on_pu_main_section',
@@ -69,7 +69,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
             ?>
 
                 <p>
-                    <?php esc_html_e( 'Use the shortcode [privacy_popup_on_form] to display the form and the popup in any page/post/widget.', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Use the shortcode [privacy_popup_on_form] to display the form and the popup in any page/post/widget.', 'privacy-popup-on-form' ); ?>
                 </p>
 
             <?php
@@ -85,7 +85,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                     <?php echo isset( self::$options['pf_on_pu_form'] ) ? esc_attr( self::$options['pf_on_pu_form'] ) : '' ; ?>
                 </textarea>
                 <label for="pf_on_pu_form" style="display: block;">
-                    <?php esc_html_e( 'Include id "policy-check" in privacy policy checkbox definition.', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Include id "policy-check" in privacy policy checkbox definition.', 'privacy-popup-on-form' ); ?>
                 </label>
 
 
@@ -99,13 +99,13 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
             if ($privacy_policy_page->post_status == 'publish') {
                 ?>
                     <p>
-                        <?php esc_html_e( 'Your privacy policy page is ready.', 'pf-on-pu' ); ?>
+                        <?php esc_html_e( 'Your privacy policy page is ready.', 'privacy-popup-on-form' ); ?>
                     </p>
                 <?php          
             } else {
                 ?>
                     <p style="color: red;">
-                        <?php esc_html_e( 'Your privacy policy page is not set up. Please assign or publish your privacy policy page.', 'pf-on-pu' ); ?>
+                        <?php esc_html_e( 'Your privacy policy page is not set up. Please assign or publish your privacy policy page.', 'privacy-popup-on-form' ); ?>
                     </p>
                 <?php
             }
@@ -122,7 +122,7 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                     <?php echo isset( self::$options['pf_on_pu_custom_styles'] ) ? self::$options['pf_on_pu_custom_styles'] : '' ; ?>
                 </textarea>
                 <label for="pf_on_pu_custom_styles" style="display: block;">
-                    <?php esc_html_e( 'Include custom styles if necessary.', 'pf-on-pu' ); ?>
+                    <?php esc_html_e( 'Include custom styles if necessary.', 'privacy-popup-on-form' ); ?>
                 </label>
 
 
@@ -137,8 +137,8 @@ if( ! class_exists( 'PF_on_PU_Settings' ) ){
                 switch( $key ){
                     case 'pf_on_pu_form':
                         if( empty( $value ) || $value == "Please, type some HTML code." ){
-                            add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'The HTML form field cannot be empty.', 'pf-on-pu' ) );
-                            $value = esc_html__( "Please, type some HTML code.", 'pf-on-pu' );
+                            add_settings_error( 'pf_on_pu_options', 'pf_on_pu_message', esc_html__( 'The HTML form field cannot be empty.', 'privacy-popup-on-form' ) );
+                            $value = esc_html__( "Please, type some HTML code.", 'privacy-popup-on-form' );
                             $new_input[$key] = trim( $value );
                         } else {
                             $allowed_tags = array(

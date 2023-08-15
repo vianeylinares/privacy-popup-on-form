@@ -7,7 +7,7 @@
             settings_fields( 'pf_on_pu_group' );
             do_settings_sections( 'pf_on_pu_page1' );
             
-            submit_button( esc_html__( 'Save Settings', 'pf-on-pu' ) );
+            submit_button( esc_html__( 'Save Settings', 'privacy-popup-on-form' ) );
 
         ?>
     </form>
