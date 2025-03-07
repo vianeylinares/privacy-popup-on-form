@@ -17,5 +17,3 @@ The plugin was developed with:
 <li>CSS</li>
 <li>Magnific Popup</li>
 </ul>
-
-This plugin is a revamp of the [Form and Popup](https://github.com/vianeylinares/form-and-popup) plugin.
